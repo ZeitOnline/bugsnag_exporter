@@ -31,6 +31,8 @@ Pass ``--ttl=SECONDS`` to cache Bugsnag API results for the given time or -1 to 
 Prometheus considers metrics stale after 300s, so that's the highest scrape_interval one should use.
 However it's usually unnecessary to hit the API that often, since the vulnerability alert information does not change that rapidly.
 
+You can pass `--buckets` with a comma-separated list to define the upper bucket bounds that are used to generate the histogram metric.
+
 
 Configure Prometheus
 --------------------
@@ -43,7 +45,7 @@ Configure Prometheus
         static_configs:
           - targets: ['localhost:9642']
 
-We export one metric, a gauge called ``bugsnag_events``,
-with labels ``{project="MyProject"}``.
+We export one metric, a histogram with "greater than/equal" buckets called ``bugsnag_events``,
+with labels ``{project="MyProject", release_stage="production"}``.
 
 Additionally, a ``bugsnag_scrape_duration_seconds`` gauge is exported.
