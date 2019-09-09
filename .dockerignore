@@ -1,0 +1,7 @@
+.tox/**/*
+src/**/*
+CHANGES.txt
+LICENSE
+README.rst
+setup.py
+tox.ini
