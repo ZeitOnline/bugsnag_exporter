@@ -15,9 +15,9 @@ Configure API token
 -------------------
 
 You'll need to provide an API token to access the Bugsnag Data Access API.
-See the `Bugsnag documentation` for details.
+See the `Bugsnag documentation`_ for details.
 
-.. `Bugsnag documentation`: https://bugsnagapiv2.docs.apiary.io/#introduction/authentication
+.. _`Bugsnag documentation`: https://bugsnagapiv2.docs.apiary.io/#introduction/authentication
 
 
 Start HTTP service
@@ -41,7 +41,7 @@ Configure Prometheus
 
     scrape_configs:
       - job_name: 'bugsnag'
-        scrape_interval: 1800s
+        scrape_interval: 300s
         static_configs:
           - targets: ['localhost:9642']
 
