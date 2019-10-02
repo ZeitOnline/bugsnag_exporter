@@ -5,7 +5,7 @@ CHANGES
 1.1.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use default prometheus histograms with "le" buckets
 
 
 1.0.0 (2019-09-09)

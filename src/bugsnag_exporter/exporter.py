@@ -29,18 +29,7 @@ class Gauge(prometheus_client.core.GaugeMetricFamily, Cloneable):
 
 
 class Histogram(prometheus_client.core.HistogramMetricFamily, Cloneable):
-
-    def add_metric(self, *args, **kw):
-        # Transform "less than/equal" labels into "greater/equal".
-        count = len(self.samples)
-        super(Histogram, self).add_metric(*args, **kw)
-        for sample in self.samples[count:]:
-            if 'le' not in sample.labels:
-                continue
-            sample.labels['ge'] = sample.labels['le']
-            del sample.labels['le']
-            if sample.labels['ge'] == '+Inf':
-                sample.labels['ge'] = '0.0'
+    pass
 
 
 class EventCollector:
@@ -93,7 +82,7 @@ class EventCollector:
                         count = by_stage[stage]
                         value = error['events']
                         for bucket in self.buckets:
-                            if value >= bucket:
+                            if value <= bucket:
                                 count[bucket] += 1
                         count[INF] += 1
                         count['sum'] += value

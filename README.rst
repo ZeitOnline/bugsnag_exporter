@@ -45,7 +45,9 @@ Configure Prometheus
         static_configs:
           - targets: ['localhost:9642']
 
-We export one metric, a histogram with "greater than/equal" buckets called ``bugsnag_events``,
+We export one metric, a histogram called ``bugsnag_events``,
 with labels ``{project="MyProject", release_stage="production"}``.
+
+A typical alerting PromQL query might be ``bugsnag_events_bucket{le="+Inf",release_stage="production"} - bugsnag_events_bucket{le="1000.0",release_stage="production"} > 0``
 
 Additionally, a ``bugsnag_scrape_duration_seconds`` gauge is exported.
