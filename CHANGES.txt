@@ -2,7 +2,7 @@ CHANGES
 =======
 
 
-1.1.0 (unreleased)
+1.1.0 (2019-10-02)
 ------------------
 
 - Use default prometheus histograms with "le" buckets
