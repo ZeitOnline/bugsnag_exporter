@@ -1,4 +1,4 @@
-bugsnag_exporter==1.1.0
+bugsnag_exporter==1.1.1
 
 prometheus-client==0.10.1
 
