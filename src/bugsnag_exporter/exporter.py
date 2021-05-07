@@ -103,6 +103,9 @@ class EventCollector:
     BATCH_SIZE = '100'
 
     def _paginate(self, path, **kw):
+        if 'url' in kw:
+            time.sleep(8)  # XXX Try to prevent rate limit
+
         kw.setdefault('per_page', self.BATCH_SIZE)
         r = self._request(path, **kw)
         data = r.json()

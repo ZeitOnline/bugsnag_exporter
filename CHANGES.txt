@@ -5,7 +5,7 @@ CHANGES
 1.2.0 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Throttle paginated requests to avoid hitting the rate limit.
 
 
 1.1.0 (2019-10-02)
