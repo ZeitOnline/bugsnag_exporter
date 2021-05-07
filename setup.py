@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='bugsnag_exporter',
-    version='1.2.0.dev0',
+    version='1.1.1',
     author='Wolfgang Schnerring',
     author_email='wolfgang.schnerring@zeit.de',
     url='https://github.com/ZeitOnline/bugsnag_exporter',

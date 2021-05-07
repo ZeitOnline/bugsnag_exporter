@@ -2,7 +2,7 @@ CHANGES
 =======
 
 
-1.2.0 (unreleased)
+1.1.1 (2021-05-07)
 ------------------
 
 - Throttle paginated requests to avoid hitting the rate limit.
