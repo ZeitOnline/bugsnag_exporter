@@ -1,5 +1,3 @@
-bugsnag_exporter==1.1.1
-
 prometheus-client==0.11.0
 
 requests==2.25.1
