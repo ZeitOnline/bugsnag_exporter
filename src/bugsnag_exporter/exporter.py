@@ -126,6 +126,8 @@ class EventCollector:
             'Authorization': 'token %s' % self.apitoken,
             'X-Version': '2',
         })
+        if not r.ok:
+            r.reason = "%s (%s)" % (r.reason, r.text)
         r.raise_for_status()
         return r
 
