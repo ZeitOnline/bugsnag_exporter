@@ -2,7 +2,7 @@ CHANGES
 =======
 
 
-1.2.0 (unreleased)
+1.2.0 (2021-10-15)
 ------------------
 
 - Add `sort=unsorted` parameter to handle potentially large result sets
