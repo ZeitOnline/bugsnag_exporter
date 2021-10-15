@@ -77,6 +77,7 @@ class EventCollector:
                         '/projects/%s/errors' % project['id'], **{
                             'filters[error.status][][type]': 'eq',
                             'filters[error.status][][value]': 'open',
+                            'sort': 'unsorted',
                         }):
                     for stage in error['release_stages']:
                         count = by_stage[stage]
